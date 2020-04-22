@@ -109,7 +109,7 @@ blocks: [
 },
 {
 category: 'text',
-blocks: ['text_read', 'text_write', 'text_append', 'text_prepend', 'text_flush'],
+blocks: ['text_blue', 'text_orange', 'text_Yello', 'text_gray ', 'text_flush'],
 },
 {
 category: 'sound',
@@ -342,8 +342,8 @@ template: template
 
 ////////////////////
 addBlock('fetch', '%1 가져오기', {
-color: EntryStatic.colorSet.block.default.HARDWARE,
-outerLine: EntryStatic.colorSet.block.darken.HARDWARE
+color: EntryStatic.colorSet.block.default.HARDWAR,
+outerLine: EntryStatic.colorSet.block.darken.HARDWAR
 }, {
 params: [
 {
@@ -369,8 +369,8 @@ return data
 
 ////////////////////
 addBlock('array_number', '배열 %1 의 %2 번째 항목', {
-color: EntryStatic.colorSet.block.default.HARDWARE,
-outerLine: EntryStatic.colorSet.block.darken.HARDWARE
+color: EntryStatic.colorSet.block.default.HARDWAR,
+outerLine: EntryStatic.colorSet.block.darken.HARDWAR
 }, {
 params: [
 {
@@ -405,8 +405,8 @@ return done
 
 ////////////////////
 addBlock('json_length', 'JSON %1 의 항목 수', {
-color: EntryStatic.colorSet.block.default.HARDWARE,
-outerLine: EntryStatic.colorSet.block.darken.HARDWARE
+color: EntryStatic.colorSet.block.default.HARDWAR,
+outerLine: EntryStatic.colorSet.block.darken.HARDWAR
 }, {
 params: [
 {
@@ -439,8 +439,8 @@ return done
 
 ////////////////////
 addBlock('json_key', 'JSON %1 의 %2 항목', {
-color: EntryStatic.colorSet.block.default.HARDWARE,
-outerLine: EntryStatic.colorSet.block.darken.HARDWARE
+color: EntryStatic.colorSet.block.default.HARDWAR,
+outerLine: EntryStatic.colorSet.block.darken.HARDWAR
 }, {
 params: [
 {
@@ -475,8 +475,8 @@ return done
 
 ////////////////////
 addBlock('array_length', '배열 %1 의 항목 수', {
-color: EntryStatic.colorSet.block.default.HARDWARE,
-outerLine: EntryStatic.colorSet.block.darken.HARDWARE
+color: EntryStatic.colorSet.block.default.HARDWAR,
+outerLine: EntryStatic.colorSet.block.darken.HARDWAR
 }, {
 params: [
 {
@@ -501,8 +501,8 @@ return done
 
 ////////////////////
 addBlock('toast', '%1 제목과 %2 내용의 %3 경고를 %4 출력하기%5', {
-color: EntryStatic.colorSet.block.default.HARDWARE,
-outerLine: EntryStatic.colorSet.block.darken.HARDWARE
+color: EntryStatic.colorSet.block.default.HARDWAR,
+outerLine: EntryStatic.colorSet.block.darken.HARDWAR
 }, {
 params: [
 {
@@ -573,8 +573,8 @@ return script.callReturn()
 
 ////////////////////
 addBlock('console', '%1 내용을 이컴퓨터(브라우저) 콘솔에 %2 하기%3', {
-color: EntryStatic.colorSet.block.default.HARDWARE,
-outerLine: EntryStatic.colorSet.block.darken.HARDWARE
+color: EntryStatic.colorSet.block.default.HARDWAR,
+outerLine: EntryStatic.colorSet.block.darken.HARDWAR
 }, {
 params: [
 {
@@ -619,8 +619,8 @@ return script.callReturn()
 
 ////////////////////
 addBlock('console_clear', '이컴퓨터(브라우저) 콘솔 모두 지우기%1', {
-color: EntryStatic.colorSet.block.default.HARDWARE,
-outerLine: EntryStatic.colorSet.block.darken.HARDWARE
+color: EntryStatic.colorSet.block.default.HARDWAR,
+outerLine: EntryStatic.colorSet.block.darken.HARDWAR
 }, {
 params: [
 {
@@ -641,8 +641,8 @@ return script.callReturn()
 
 ////////////////////
 addBlock('entry_console', '%1 내용을 엔트리 콘솔에 출력하기%2', {
-color: EntryStatic.colorSet.block.default.HARDWARE,
-outerLine: EntryStatic.colorSet.block.darken.HARDWARE
+color: EntryStatic.colorSet.block.default.HARDWAR,
+outerLine: EntryStatic.colorSet.block.darken.HARDWAR
 }, {
 params: [
 {
@@ -673,8 +673,8 @@ return script.callReturn()
 
 ////////////////////
 addBlock('entry_console_clear', '엔트리 콘솔 모두 지우기%1', {
-color: EntryStatic.colorSet.block.default.HARDWARE,
-outerLine: EntryStatic.colorSet.block.darken.HARDWARE
+color: EntryStatic.colorSet.block.default.HARDWAR,
+outerLine: EntryStatic.colorSet.block.darken.HARDWAR
 }, {
 params: [
 {
@@ -695,8 +695,8 @@ return script.callReturn()
 
 ////////////////////
 addBlock('get_browser', '컴퓨터이름(브라우저이름)', {
-color: EntryStatic.colorSet.block.default.HARDWARE,
-outerLine: EntryStatic.colorSet.block.darken.HARDWARE
+color: EntryStatic.colorSet.block.default.HARDWAR,
+outerLine: EntryStatic.colorSet.block.darken.HARDWAR
 }, {
 params: [],
 def: [],
@@ -708,8 +708,8 @@ return Entry.userAgent
 
 ////////////////////
 addBlock('change_var', '%1 값을 %2 으로 변경%3', {
-color: EntryStatic.colorSet.block.default.HARDWARE,
-outerLine: EntryStatic.colorSet.block.darken.HARDWARE
+color: EntryStatic.colorSet.block.default.HARDWAR,
+outerLine: EntryStatic.colorSet.block.darken.HARDWAR
 }, {
 params: [
 {
@@ -749,8 +749,8 @@ return script.callReturn()
 
 ////////////////////
 addBlock('entry_console_clear', '이블럭들을만들사람은john0817%1', {
-color: EntryStatic.colorSet.block.default.HARDWARE,
-outerLine: EntryStatic.colorSet.block.darken.HARDWARE
+color: EntryStatic.colorSet.block.default.HARDWAR,
+outerLine: EntryStatic.colorSet.block.darken.HARDWAR
 }, {
 params: [
 {
@@ -769,52 +769,7 @@ return script.callReturn()
 })
 ////////////////////
 
-////////////////////
-addBlock('post_commu', '%1 제목과 %2 내용의 글을 엔커뮤에 올리기%3', {
-    color: EntryStatic.colorSet.block.default.HARDWARE,
-    outerLine: EntryStatic.colorSet.block.darken.HARDWARE
-}, {
-    params: [
-        {
-            type: 'Block',
-            accept: 'string'
-        },
-        {
-            type: 'Block',
-            accept: 'string'
-        },
-        {
-            type: 'Indicator',
-            img: 'block_icon/hardware_icon.svg',
-            size: 11,
-        }
-    ],
-    def: [
-        {
-            type: 'text',
-            params: [`내 컴퓨터`]
-        },
-        {
-            type: 'text',
-            params: [`너무 좋아`]
-        },
-        null
-    ],
-    map: {
-        TITLE: 0,
-        CONTENT: 1
-    }
-}, 'text', (sprite, script) => {
-    fetch('https://playentry.org/api/discuss/', {
-        method: 'POST',
-        body: `{ "images": [], "category": "free", "title": "${script.getValue('TITLE', script)}", "content": "${script.getValue('CONTENT', script)}", "groupNotice": false }`,
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    })
-    return script.callReturn()
-})
-////////////////////
+
 
 // 블록 추가 끝
 
@@ -842,17 +797,17 @@ updateCategory('API')
 $('head').append(`
 <style>
 #entryCategoryAPI {
-background-image: url(https://w7.pngwing.com/pngs/790/934/png-transparent-letter-alphabet-s-k-miscellaneous-angle-number.png);
+background-image: url(/lib/entry-js/images/hardware.svg);
 background-repeat: no-repeat;
 border-bottom-right-radius: 6px;
 border-bottom-left-radius: 6px;
 margin-bottom: 1px;
 }
 .entrySelectedCategory#entryCategoryAPI {
-background-image: url(https://w7.pngwing.com/pngs/790/934/png-transparent-letter-alphabet-s-k-miscellaneous-angle-number.png);
-background-color: #00b6b1;
-border-color: #00b6b1;
-color: #fff;
+background-image: url(/lib/entry-js/images/hardware_on.svg);
+background-color: #00b6;
+border-color: #00bb;
+color: #ff;
 }
 </style>
 `)
