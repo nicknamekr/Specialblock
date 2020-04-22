@@ -842,14 +842,14 @@ updateCategory('API')
 $('head').append(`
 <style>
 #entryCategoryAPI {
-background-image: url(/lib/entry-js/images/hardware.svg);
+background-image: url(https://w7.pngwing.com/pngs/790/934/png-transparent-letter-alphabet-s-k-miscellaneous-angle-number.png);
 background-repeat: no-repeat;
 border-bottom-right-radius: 6px;
 border-bottom-left-radius: 6px;
 margin-bottom: 1px;
 }
 .entrySelectedCategory#entryCategoryAPI {
-background-image: url(/lib/entry-js/images/hardware_on.svg);
+background-image: url(https://w7.pngwing.com/pngs/790/934/png-transparent-letter-alphabet-s-k-miscellaneous-angle-number.png);
 background-color: #00b6b1;
 border-color: #00b6b1;
 color: #fff;
