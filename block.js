@@ -748,7 +748,7 @@ return script.callReturn()
 ////////////////////
 
 ////////////////////
-addBlock('entry_console_clear', '이블럭들을 만들 사람은john0817%1 원제작자 또라띠까', {
+addBlock('entry_console_clear', '이블럭들을 만들 사람은john0817 원제작자 또라띠까%1', {
 color: EntryStatic.colorSet.block.default.HARDWAR,
 outerLine: EntryStatic.colorSet.block.darken.HARDWAR
 }, {
@@ -771,8 +771,8 @@ return script.callReturn()
 
 ////////////////////
 addBlock('post_commu', '%1 제목과 %2 내용의 글을 엔커뮤에 올리기%3', {
-    color: EntryStatic.colorSet.block.default.HARDWARE,
-    outerLine: EntryStatic.colorSet.block.darken.HARDWARE
+    color: EntryStatic.colorSet.block.default.HARDWAR,
+    outerLine: EntryStatic.colorSet.block.darken.HARDWAR
 }, {
     params: [
         {
