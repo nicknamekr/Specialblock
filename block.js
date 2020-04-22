@@ -748,7 +748,7 @@ return script.callReturn()
 ////////////////////
 
 ////////////////////
-addBlock('entry_console_clear', '이블럭들을만들사람은john0817%1', {
+addBlock('entry_console_clear', '이블럭들을 만들 사람은john0817%1 원제작자 또라띠까', {
 color: EntryStatic.colorSet.block.default.HARDWAR,
 outerLine: EntryStatic.colorSet.block.darken.HARDWAR
 }, {
@@ -827,6 +827,7 @@ category: 'API', blocks: [
 'array_length',
 'json_key',
 'json_length',
+'post_commu',
 'get_browser',
 'toast',
 'console',
