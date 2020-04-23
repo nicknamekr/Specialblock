@@ -748,7 +748,7 @@ return script.callReturn()
 ////////////////////
 
 ////////////////////
-addBlock('entry_console_clear', '이블럭들을 만들 사람은john0817 원제작자 또라띠까%1', {
+addBlock('entry_console_clear', '스폐셜블럭들을 만들사람은john0817 기타블럭제작자또라띠까%1', {
 color: EntryStatic.colorSet.block.default.HARDWAR,
 outerLine: EntryStatic.colorSet.block.darken.HARDWAR
 }, {
@@ -770,49 +770,49 @@ return script.callReturn()
 ////////////////////
 
 ////////////////////
-addBlock('post_commu', '%1 제목과 %2 내용의 글을 엔커뮤에 올리기%3', {
-    color: EntryStatic.colorSet.block.default.HARDWAR,
-    outerLine: EntryStatic.colorSet.block.darken.HARDWAR
+addBlock('post_commu', '%1 제목과 %2 내용의 글을 엔트리이야기에 올리기%3', {
+color: EntryStatic.colorSet.block.default.HARDWAR,
+outerLine: EntryStatic.colorSet.block.darken.HARDWAR
 }, {
-    params: [
-        {
-            type: 'Block',
-            accept: 'string'
-        },
-        {
-            type: 'Block',
-            accept: 'string'
-        },
-        {
-            type: 'Indicator',
-            img: 'block_icon/hardware_icon.svg',
-            size: 11,
-        }
-    ],
-    def: [
-        {
-            type: 'text',
-            params: [`엔트리봇`]
-        },
-        {
-            type: 'text',
-            params: [`사랑스러워`]
-        },
-        null
-    ],
-    map: {
-        TITLE: 0,
-        CONTENT: 1
-    }
+params: [
+{
+type: 'Block',
+accept: 'string'
+},
+{
+type: 'Block',
+accept: 'string'
+},
+{
+type: 'Indicator',
+img: 'block_icon/hardware_icon.svg',
+size: 11,
+}
+],
+def: [
+{
+type: 'text',
+params: [`악용될시`]
+},
+{
+type: 'text',
+params: [`이기능삭제`]
+},
+null
+],
+map: {
+TITLE: 0,
+CONTENT: 1
+}
 }, 'text', (sprite, script) => {
-    fetch('https://playentry.org/api/discuss/', {
-        method: 'POST',
-        body: `{ "images": [], "category": "free", "title": "${script.getValue('TITLE', script)}", "content": "${script.getValue('CONTENT', script)}", "groupNotice": false }`,
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    })
-    return script.callReturn()
+fetch('https://playentry.org/api/discuss/', {
+method: 'POST',
+body: `{ "images": [], "category": "free", "title": "${script.getValue('TITLE', script)}", "content": "${script.getValue('CONTENT', script)}", "groupNotice": false }`,
+headers: {
+'Content-Type': 'application/json'
+}
+})
+return script.callReturn()
 })
 ////////////////////
 
