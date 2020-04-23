@@ -818,8 +818,8 @@ return script.callReturn()
 
 ////////////////////
 addBlock('likeList', '이 작품 좋아요 목록%3', {
-    color: EntryStatic.colorSet.block.default.HARDWARE,
-    outerLine: EntryStatic.colorSet.block.darken.HARDWARE
+    color: EntryStatic.colorSet.block.default.HARDWAR,
+    outerLine: EntryStatic.colorSet.block.darken.HARDWAR
 }, {
     params: [
         {
