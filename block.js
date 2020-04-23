@@ -816,47 +816,6 @@ return script.callReturn()
 })
 ////////////////////
 
-////////////////////
-addBlock('likeList', '이 작품 좋아요 목록%3', {
-    color: EntryStatic.colorSet.block.default.HARDWAR,
-    outerLine: EntryStatic.colorSet.block.darken.HARDWAR
-}, {
-    params: [
-        {
-            type: 'Block',
-            accept: 'string'
-        },
-        {
-            type: 'Block',
-            accept: 'string'
-        },
-        {
-            type: 'Indicator',
-            img: 'block_icon/hardware_icon.svg',
-            size: 11,
-        }
-    ],
-    def: [
-        {
-            type: 'text',
-            params: [`user.username`]
-        },
-        {
-            type: 'text',
-            params: ['entry']
-        },
-        null
-    ],
-    map: {
-        VARNAME: 0,
-        VALUE: 1
-    }
-}, 'text', async (sprite, script) => {
-    let res = await fetch(`https://playentry.org/api/project/likes/${Entry.projectId}?noCache=1587602931964&rows=99999999&targetSubject=project&targetType=individual`)
-    let data = await res.json()
-    return data
-}, 'basic_string_field');
-////////////////////
 
 // 블록 추가 끝
 
@@ -876,7 +835,6 @@ category: 'API', blocks: [
 'entry_console',
 'entry_console_clear',
 'change_var'
-'likeList'
 ]
 });
 
@@ -902,4 +860,3 @@ color: #ff;
 `)
 
 $('#entryCategoryAPI').append('스폐셜')
-
