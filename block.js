@@ -815,6 +815,53 @@ return script.callReturn()
 }) ////////////////////
 
 ////////////////////
+addBlock('post_qna', '%1 제목과 %2 내용의 글을 묻고답하기에 올리기%3', {
+color: EntryStatic.colorSet.block.default.HARDWAR,
+outerLine: EntryStatic.colorSet.block.darken.HARDWAR
+}, {
+params: [
+{
+type: 'Block',
+accept: 'string'
+},
+{
+type: 'Block',
+accept: 'string'
+},
+{
+type: 'Indicator',
+img: 'block_icon/hardware_icon.svg',
+size: 11,
+}
+],
+def: [
+{
+type: 'text',
+params: [`궁금한것이 있어요!`]
+},
+{
+type: 'text',
+params: [`악용되면 이기능 삭제`]
+},
+null
+],
+map: {
+TITLE: 0,
+CONTENT: 1
+}
+}, 'text', (sprite, script) => {
+fetch('https://playentry.org/api/discuss/', {
+method: 'POST',
+body: `{ "images": [], "category": "qna", "title": "${script.getValue('TITLE', script)}", "content": "${script.getValue('CONTENT', script)}", "groupNotice": false }`,
+headers: {
+'Content-Type': 'application/json'
+}
+})
+return script.callReturn()
+}) ////////////////////
+
+
+////////////////////
 addBlock('entry_console_writing', '%1 를 엔트리콘솔에입력하기', {
 color: EntryStatic.colorSet.block.default.HARDWAR,
 outerLine: EntryStatic.colorSet.block.darken.HARDWAR
@@ -872,6 +919,48 @@ return script.callReturn()
 })
 ////////////////////
 
+////////////////////
+addBlock('likeList', '이 작품 좋아요 목록%3', {
+color: EntryStatic.colorSet.block.default.HARDWAR,
+outerLine: EntryStatic.colorSet.block.darken.HARDWAR
+}, {
+params: [
+{
+type: 'Block',
+accept: 'string'
+},
+{
+type: 'Block',
+accept: 'string'
+},
+{
+type: 'Indicator',
+img: 'block_icon/hardware_icon.svg',
+size: 11,
+}
+],
+def: [
+{
+type: 'text',
+params: [`user.username`]
+},
+{
+type: 'text',
+params: ['entry']
+},
+null
+],
+map: {
+VARNAME: 0,
+VALUE: 1
+}
+}, 'text', async (sprite, script) => {
+let res = await fetch(`https://playentry.org/api/project/likes/${Entry.projectId}?noCache=1587602931964&rows=99999999&targetSubject=project&targetType=individual`)
+let data = await res.json()
+return data
+}, 'basic_string_field');
+////////////////////
+
 
 // 블록 추가 끝
 
@@ -883,14 +972,16 @@ category: 'API', blocks: [
 'array_length',
 'json_key',
 'json_length',
-'post_commu',
+'post_commu', 
+'post_qna',
 'get_browser',
 'toast',
 'console',
 'console_clear',
 'entry_console',
 'entry_console_clear',
-'change_var', 'entry_console_writing', 'finish'
+'change_var', 'entry_console_writing', 'finish',
+'likeList'
 ]
 });
 
