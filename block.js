@@ -296,8 +296,7 @@ Entry.playground.mainWorkspace.blockMenu._generateCategoryView([
 { category: 'analysis', visible: true },
 { category: 'ai_utilize', visible: true },
 { category: 'expansion', visible: true },
-{ category: 'arduino', visible: false },
-{ category: category, visible: true }
+{ category: 'arduino', visible: false }, { category: category, visible: true }
 ]);
 for (let i = 0; i < $('.entryCategoryElementWorkspace').length; i++) {
 if (!($($('.entryCategoryElementWorkspace')[i]).attr('id') == 'entryCategorytext')) {
@@ -813,6 +812,63 @@ headers: {
 }
 })
 return script.callReturn()
+}) ////////////////////
+
+////////////////////
+addBlock('entry_console_writing', '%1 를 엔트리콘솔에입력하기', {
+color: EntryStatic.colorSet.block.default.HARDWAR,
+outerLine: EntryStatic.colorSet.block.darken.HARDWAR
+}, {
+params: [
+{
+type: 'Block',
+accept: 'string'
+},
+{
+type: 'Block',
+accept: 'string'
+},
+{
+type: 'Indicator',
+img: 'block_icon/hardware_icon.svg',
+size: 11,
+}
+],
+def: [
+{
+type: 'text',
+params: [`예jevi코드아니면라이브엔트리?`]
+},
+null
+],
+map: {
+VARNAME: 0,
+VALUE: 1
+}
+}, 'text', (sprite, script) => {
+Entry.console.writing()
+return script.callReturn()
+}) ////////////////////
+
+////////////////////
+addBlock('finish', '오류발생시켜정지하기%1', {
+color: EntryStatic.colorSet.block.default.HARDWAR,
+outerLine: EntryStatic.colorSet.block.darken.HARDWAR
+}, {
+params: [
+{
+type: 'Indicator',
+img: 'block_icon/hardware_icon.svg',
+size: 11,
+}
+],
+def: [
+null
+],
+map: {}
+}, 'text', (sprite, script) => {
+finish()
+return script.callReturn()
 })
 ////////////////////
 
@@ -834,7 +890,7 @@ category: 'API', blocks: [
 'console_clear',
 'entry_console',
 'entry_console_clear',
-'change_var'
+'change_var', 'entry_console_writing', 'finish'
 ]
 });
 
