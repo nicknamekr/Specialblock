@@ -958,7 +958,39 @@ VALUE: 1
 let res = await fetch(`https://playentry.org/api/project/likes/${Entry.projectId}?noCache=1587602931964&rows=99999999&targetSubject=project&targetType=individual`)
 let data = await res.json()
 return data
-}, 'basic_string_field');
+}, 'basic_string_field'); /////////////////
+////////////////
+addBlock('boost_mode', '부스트모드가 켜져있는가? ', {
+color: EntryStatic.colorSet.block.default.HARDWAR,
+outerLine: EntryStatic.colorSet.block.darken.HARDWAR
+}, {
+params: [
+],
+def: [],
+map: {}
+}, 'text', (sprite, script) => {
+if (useWebGL == true) {
+return true;
+} else {
+return false;
+}
+}, 'basic_boolean_field') /////////////////
+////////////////
+addBlock('mouse', '마우스우클릭을했는가? ', {
+color: EntryStatic.colorSet.block.default.HARDWAR,
+outerLine: EntryStatic.colorSet.block.darken.HARDWAR
+}, {
+params: [
+],
+def: [],
+map: {}
+}, 'text', (sprite, script) => {
+if (chilk(light)) {
+return true;
+} else {
+return false;
+}
+}, 'basic_boolean_field')
 ////////////////////
 
 
@@ -972,7 +1004,7 @@ category: 'API', blocks: [
 'array_length',
 'json_key',
 'json_length',
-'post_commu', 
+'post_commu',
 'post_qna',
 'get_browser',
 'toast',
@@ -981,7 +1013,7 @@ category: 'API', blocks: [
 'entry_console',
 'entry_console_clear',
 'change_var', 'entry_console_writing', 'finish',
-'likeList'
+'likeList', 'boost_mode', 'mouse'
 ]
 });
 
