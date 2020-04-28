@@ -366,75 +366,6 @@ return data
 }, 'basic_string_field')
 ////////////////////
 
-////////////////////
-addBlock('json_length', 'JSON %1 의 항목 수', {
-color: EntryStatic.colorSet.block.default.HARDWAR,
-outerLine: EntryStatic.colorSet.block.darken.HARDWAR
-}, {
-params: [
-{
-type: 'Block',
-accept: 'string'
-},
-{
-type: 'Block',
-accept: 'string'
-}
-],
-def: [
-{
-type: 'text',
-params: [`{ 'title': 'Hello, world!' }`]
-},
-{
-type: 'text',
-params: ['title']
-}
-],
-map: {
-JSON: 0
-}
-}, 'text', (sprite, script) => {
-let done = Object.keys(JSON.parse(script.getValue('JSON', script))).length
-return done
-}, 'basic_string_field')
-////////////////////
-
-////////////////////
-addBlock('json_key', 'JSON %1 의 %2 항목', {
-color: EntryStatic.colorSet.block.default.HARDWAR,
-outerLine: EntryStatic.colorSet.block.darken.HARDWAR
-}, {
-params: [
-{
-type: 'Block',
-accept: 'string'
-},
-{
-type: 'Block',
-accept: 'string'
-}
-],
-def: [
-{
-type: 'text',
-params: [`{ 'title': 'Hello, world!' }`]
-},
-{
-type: 'text',
-params: ['title']
-}
-],
-map: {
-JSON: 0,
-KEY: 1
-}
-}, 'text', (sprite, script) => {
-let array = eval(script.getValue('JSON', script))
-let done = array[script.getValue('KEY', script)]
-return done
-}, 'basic_string_field')
-////////////////////
 
 ////////////////////
 addBlock('array_length', '배열 %1 의 항목 수', {
@@ -783,6 +714,23 @@ return false;
 }
 }, 'basic_boolean_field') /////////////////
 
+////////////////
+addBlock('mouse', '마우스우클릭을했는가? ', {
+color: EntryStatic.colorSet.block.default.HARDWAR,
+outerLine: EntryStatic.colorSet.block.darken.HARDWAR
+}, {
+params: [
+],
+def: [],
+map: {}
+}, 'text', (sprite, script) => {
+if (chilk(light)) {
+return true;
+} else {
+return false;
+}
+}, 'basic_boolean_field')
+////////////////////
 
 // 블록 추가 끝
 
@@ -791,14 +739,13 @@ Entry.staticBlocks.push({
 category: 'API', blocks: [
 'fetch',
 'array_length',
-'json_key',
-'json_length',
 'post_commu',
 'get_browser',
 'toast',
 'console',
 'change_var', 'finish',
-'likeList', 'boost_mode'
+'likeList', 'boost_mode',
+'mouse'
 ]
 });
 
