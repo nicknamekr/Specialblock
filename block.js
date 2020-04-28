@@ -976,7 +976,10 @@ return false;
 }
 }, 'basic_boolean_field') /////////////////
 ////////////////
-addBlock('mouse', '마우스우클릭을했는가? ', {
+
+
+///////////////////////////////////////////////////////////////////////////////
+addBlock('mouse', '마우스 우클릭을 했는가? ', {
 color: EntryStatic.colorSet.block.default.HARDWAR,
 outerLine: EntryStatic.colorSet.block.darken.HARDWAR
 }, {
@@ -985,13 +988,16 @@ params: [
 def: [],
 map: {}
 }, 'text', (sprite, script) => {
-if (chilk(light)) {
+$("html").on("mousedown",function(e){
+var E=e.originalEvent
+if(E.button){
 return true;
-} else {
+}else{
 return false;
 }
+})
 }, 'basic_boolean_field')
-////////////////////
+//////////////////////////////////////////////////////////////////////////
 
 
 // 블록 추가 끝
