@@ -732,6 +732,7 @@ return false;
 }, 'basic_boolean_field')
 ////////////////////
 
+
 // 블록 추가 끝
 
 
@@ -770,4 +771,4 @@ color: #ff;
 </style>
 `)
 
-$('#entryCategoryAPI').append('Lite_스페셜')
+$('#entryCategoryAPI').append('Lite')
