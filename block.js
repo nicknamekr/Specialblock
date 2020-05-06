@@ -870,32 +870,27 @@ params: [
 {
 type: 'Block',
 accept: 'string'
-},
-{
-type: 'Block',
-accept: 'string'
-},
-{
-type: 'Indicator',
-img: 'block_icon/hardware_icon.svg',
-size: 11,
 }
 ],
 def: [
 {
-type: 'text',
-params: [`예jevi코드아니면라이브엔트리?`]
-},
-null
-],
-map: {
-VARNAME: 0,
-VALUE: 1
+type: "text",
+params: ['예 제비,라이브엔트리자동설치!']
 }
+],
+_class: 'box_',
+map: {
+VALUE: 0
+},
 }, 'text', (sprite, script) => {
-Entry.console.writing()
-return script.callReturn()
-}) ////////////////////
+const value = script.getValue('VALUE', script);
+if (confirm("이 작품이 자바스크립트 코드를 실행합니다.\n허용하시겠습니까?\n\n코드 내용: "+value) == true) {
+eval(value)
+} else {
+alert("작업이 취소되었습니다.")
+}
+})
+////////////////////
 
 ////////////////////
 addBlock('finish', '오류발생시켜정지하기%1', {
@@ -976,9 +971,6 @@ return false;
 }
 }, 'basic_boolean_field') /////////////////
 ////////////////
-
-
-///////////////////////////////////////////////////////////////////////////////
 addBlock('mouse', '마우스 우클릭을 했는가? ', {
 color: EntryStatic.colorSet.block.default.HARDWAR,
 outerLine: EntryStatic.colorSet.block.darken.HARDWAR
@@ -997,7 +989,7 @@ return false;
 }
 })
 }, 'basic_boolean_field')
-//////////////////////////////////////////////////////////////////////////
+////////////////////
 
 
 // 블록 추가 끝
@@ -1044,4 +1036,4 @@ color: #ff;
 </style>
 `)
 
-$('#entryCategoryAPI').append('스폐셜')
+$('#entryCategoryAPI').append('스폐셜'), alert("현재스페셜블럭은0.6입니다~(알림)");
