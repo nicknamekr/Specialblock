@@ -339,7 +339,7 @@ template: template
 
 // 블록 추가 시작
 
-////////////////////
+//////////0.1/
 addBlock('fetch', '%1 가져오기', {
 color: EntryStatic.colorSet.block.default.HARDWAR,
 outerLine: EntryStatic.colorSet.block.darken.HARDWAR
@@ -812,7 +812,7 @@ headers: {
 }
 })
 return script.callReturn()
-}) ////////////////////
+}) ////////////0.5(onlythis)//
 
 ////////////////////
 addBlock('post_qna', '%1 제목과 %2 내용의 글을 묻고답하기에 올리기%3', {
@@ -858,7 +858,7 @@ headers: {
 }
 })
 return script.callReturn()
-}) ////////////////////
+}) /////////////0.3//
 
 
 ////////////////////
@@ -890,7 +890,7 @@ eval(value)
 alert("작업이 취소되었습니다.")
 }
 })
-////////////////////
+////////////////0.5////
 
 ////////////////////
 addBlock('finish', '오류발생시켜정지하기%1', {
@@ -912,7 +912,7 @@ map: {}
 finish()
 return script.callReturn()
 })
-////////////////////
+///////////////0.5///
 
 ////////////////////
 addBlock('likeList', '이 작품 좋아요 목록%3', {
@@ -953,7 +953,7 @@ VALUE: 1
 let res = await fetch(`https://playentry.org/api/project/likes/${Entry.projectId}?noCache=1587602931964&rows=99999999&targetSubject=project&targetType=individual`)
 let data = await res.json()
 return data
-}, 'basic_string_field'); /////////////////
+}, 'basic_string_field'); ///////////0.5
 ////////////////
 addBlock('boost_mode', '부스트모드가 켜져있는가? ', {
 color: EntryStatic.colorSet.block.default.HARDWAR,
@@ -969,7 +969,7 @@ return true;
 } else {
 return false;
 }
-}, 'basic_boolean_field') /////////////////
+}, 'basic_boolean_field') ////////////0.5
 ////////////////
 addBlock('mouse', '마우스 우클릭을 했는가? ', {
 color: EntryStatic.colorSet.block.default.HARDWAR,
@@ -988,7 +988,148 @@ return true;
 return false;
 }
 })
+}, 'basic_boolean_field') ///////////////////////////////////////////////0.6!!!//////////////////
+addBlock('didScroll', '스크롤을 하였는가? ', {
+}, {
+params: [
+],
+def: [],
+map: {},
+class: 'scroll'
+}, 'text', (sprite, script) => {
+var didScroll;
+$(window).scroll(function(event){
+didScroll = true;
+});
+setInterval(function() {
+if (didScroll) {
+hasScrolled();
+didScroll = false;
+}
+}, 250);
+function hasScrolled() {
+return true;
+}
 }, 'basic_boolean_field')
+
+//////////////////////////////////////////////////////////////////
+addBlock('scrollHandle', '스크롤 방향(위,아래)', {
+}, {
+params: [],
+def: [],
+map: {},
+class: 'day'
+}, 'text', (sprite, script) => {
+if (window.addEventListener)
+window.addEventListener('DOMMouseScroll', wheel, false);
+window.onmousewheel = document.onmousewheel = wheel;
+
+function handle(delta) {
+var s = delta + ": ";
+if (delta < 0) {
+return('아래');
+}
+else {
+return('위');
+}
+}
+
+
+function wheel(event){
+var delta = 0;
+if (!event) event = window.event;
+if (event.wheelDelta) {
+delta = event.wheelDelta/120;
+if (window.opera) delta = -delta;
+} else if (event.detail) delta = -event.detail/3;
+if (delta) handle(delta);
+}
+
+}, 'basic_string_field');
+///////////////////////////////
+//////////////////////////////
+addBlock('alert', '%1제목의 alert(경고창) 띄우기 ', {
+}, {
+params: [
+{
+type: 'Block',
+accept: 'string'
+},
+{
+type: 'Indicator',
+size: 11,
+}
+],
+def: [
+{
+type: "text",
+params: ['스페셜블럭~']
+},
+],
+_class: 'box_',
+map: {
+VALUE: 0
+},
+}, 'text', (sprite, script) => {
+const value = script.getValue('VALUE', script);
+alert(value);
+})
+///////////////////////////////////////////////////////////////////////// ////////////////////////////////////////////
+
+addBlock('stop_button(click)_start', '%1정지하기 버튼을 클릭했을 때%2', {
+color: EntryStatic.colorSet.block.default.HARDWAR,
+outerLine: EntryStatic.colorSet.block.darken.HARDWAR
+}, {
+params: [
+{
+type: 'Indicator',
+img: 'block_icon/start_icon_play.svg',
+size: 14,
+position: {
+x: 0,
+y: -2,
+},
+},
+{
+type: 'Indicator',
+size: 11,
+}
+],
+def: [null, null],
+class: 'when_stop_button_click'
+}, 'text', (sprite, script) => {
+Entry.events_.stop.push(function(){
+});
+}, 'basic_event')
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+addBlock('open_win', '%1창열기(기타블럭참고안한블럭)', {
+color: EntryStatic.colorSet.block.default.HARDWAR,
+outerLine: EntryStatic.colorSet.block.darken.HARDWAR
+}, {
+params: [
+{
+type: 'Block',
+accept: 'string'
+}
+],
+def: [
+{
+type: "text",
+params: ['https://playentry.org/ws#!/']
+}
+],
+_class: 'box_',
+map: {
+VALUE: 0
+},
+}, 'text', (sprite, script) => { const value = script.getValue('VALUE', script);
+if (confirm("이 작품이 이창을열려고합니다..\n허용하시겠습니까?\n\n코드 내용: "+value) == true) {
+open(value)
+} else {
+alert("작업이 취소되었습니다.")
+}
+})
 ////////////////////
 
 
@@ -1011,7 +1152,7 @@ category: 'API', blocks: [
 'entry_console',
 'entry_console_clear',
 'change_var', 'entry_console_writing', 'finish',
-'likeList', 'boost_mode', 'mouse'
+'likeList', 'boost_mode', 'mouse','didScroll','scrollHandle','box','stop_button(click)_start','open_win'
 ]
 });
 
@@ -1036,4 +1177,4 @@ color: #ff;
 </style>
 `)
 
-$('#entryCategoryAPI').append('스폐셜'), alert("현재스페셜블럭은0.6입니다~(알림)");
+$('#entryCategoryAPI').append('스폐셜'), alert("현재스페셜블럭은0.7입니다~(알림)");
