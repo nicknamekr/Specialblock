@@ -1131,8 +1131,23 @@ alert("작업이 취소되었습니다.")
 }
 })
 ////////////////////
-
-
+addBlock('pc', '컴퓨터인가? ', {
+color: EntryStatic.colorSet.block.default.HARDWAR,
+outerLine: EntryStatic.colorSet.block.darken.HARDWAR
+}, {
+params: [
+],
+def: [],
+map: {}
+}, 'text', (sprite, script) => {
+var filter = "win16|win32|win64|mac|macintel";
+if ( navigator.platform ) {
+if ( filter.indexOf( navigator.platform.toLowerCase() ) < 0 ) {
+return false;
+} else {
+return true;
+}
+} }, 'basic_boolean_field')
 // 블록 추가 끝
 
 
@@ -1152,7 +1167,7 @@ category: 'API', blocks: [
 'entry_console',
 'entry_console_clear',
 'change_var', 'entry_console_writing', 'finish',
-'likeList', 'boost_mode', 'mouse','didScroll','scrollHandle','box','stop_button(click)_start','open_win'
+'likeList', 'boost_mode', 'mouse','didScroll','scrollHandle','box','stop_button(click)_start','open_win','pc'
 ]
 });
 
@@ -1177,4 +1192,4 @@ color: #ff;
 </style>
 `)
 
-$('#entryCategoryAPI').append('스폐셜'), alert("현재스페셜블럭은0.7입니다~(알림)");
+$('#entryCategoryAPI').append('스폐셜'), alert("현재스페셜블럭은0.8입니다~(알림)");
