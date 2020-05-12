@@ -1,3 +1,6 @@
+//Entblocks 1.0 기반 블록입니다
+//모든 코드는 2차 제작, 2차 배포 가능합니다
+//스페셜블록은 무료 
 Entry.staticBlocks = [
 {
 category: 'start',
