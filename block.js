@@ -1,6 +1,6 @@
 //Entblocks 1.0 기반 블록입니다
 //모든 코드는 2차 제작, 2차 배포 가능합니다
-//스페셜블록은 무료 
+//스페셜블록은 무료
 Entry.staticBlocks = [
 {
 category: 'start',
@@ -1150,7 +1150,51 @@ return false;
 } else {
 return true;
 }
-} }, 'basic_boolean_field')
+} }, 'basic_boolean_field') //////////////////////////////////////////////////////////////////////
+addBlock('PromptConfirm', '%1제목의 %2 띄우기 ', {
+color: EntryStatic.colorSet.block.default.EX,
+outerLine: EntryStatic.colorSet.block.darken.EX
+}, {
+params: [
+{
+type: "Block",
+accept: "string"
+},
+{
+type: "Dropdown",
+options: [
+['confirm(선택창)', '1'],
+['prompt(입력창)', '2']
+],
+fontSize: 11,
+value: 'confirm(선택창)'
+},
+],
+def: [
+{
+type: 'text',
+params: [`스페셜블럭`]
+},
+null
+],
+_class: 'box_',
+map: {
+LEFTHAND: 0,
+RIGHTHAND: 1
+},
+}, 'text', (sprite, script) => {
+const leftValue = script.getValue('LEFTHAND', script);
+const rightValue = script.getField('RIGHTHAND', script);
+
+if (rightValue == '1') {
+let choose = confirm(leftValue);
+return choose;
+} else if (rightValue == '2') {
+let enter = prompt(leftValue);
+return enter;
+}
+})
+////////////////////
 // 블록 추가 끝
 
 
@@ -1170,7 +1214,7 @@ category: 'API', blocks: [
 'entry_console',
 'entry_console_clear',
 'change_var', 'entry_console_writing', 'finish',
-'likeList', 'boost_mode', 'mouse','didScroll','scrollHandle','box','stop_button(click)_start','open_win','pc'
+'likeList', 'boost_mode', 'mouse','didScroll','scrollHandle','box','stop_button(click)_start','open_win','pc','PromptConfirm'
 ]
 });
 
@@ -1195,4 +1239,4 @@ color: #ff;
 </style>
 `)
 
-$('#entryCategoryAPI').append('스폐셜'), alert("현재스페셜블럭은0.8입니다~(알림)");
+$('#entryCategoryAPI').append('스폐셜'), alert("현재스페셜블럭은0.8.5입니다~(알림)");
