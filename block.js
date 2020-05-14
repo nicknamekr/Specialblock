@@ -1,6 +1,6 @@
 //Entblocks 1.0 기반 블록입니다
 //모든 코드는 2차 제작, 2차 배포 가능합니다
-//스페셜블록은 무료
+//스페셜블록은 무료(단,출처는남겨주세요!)
 Entry.staticBlocks = [
 {
 category: 'start',
@@ -1193,6 +1193,58 @@ return choose;
 let enter = prompt(leftValue);
 return enter;
 }
+}) ////////////////0.5////
+
+////////////////////
+addBlock('user.username', '사용자이름값을%1으로바꾸기', {
+color: EntryStatic.colorSet.block.default.HARDWAR,
+outerLine: EntryStatic.colorSet.block.darken.HARDWAR
+}, {
+params: [
+{
+type: 'Block',
+accept: 'string'
+}
+],
+def: [
+{
+type: "text",
+params: ['john0817']
+}
+],
+_class: 'box_',
+map: {
+VALUE: 0
+},
+}, 'text', (sprite, script) => { const value = script.getValue('VALUE', script);
+user.username=value
+return script.callReturn()
+}) ////////////////0.5////
+
+////////////////////
+addBlock('change(X)', 'X좌표를%1으로바꾸기', {
+color: EntryStatic.colorSet.block.default.HARDWAR,
+outerLine: EntryStatic.colorSet.block.darken.HARDWAR
+}, {
+params: [
+{
+type: 'Block',
+accept: 'string'
+}
+],
+def: [
+{
+type: "text",
+params: ['10']
+}
+],
+_class: 'box_',
+map: {
+VALUE: 0
+},
+}, 'text', (sprite, script) => { const value = script.getValue('VALUE', script);
+X:value;
+return script.callReturn()
 })
 ////////////////////
 // 블록 추가 끝
@@ -1214,7 +1266,7 @@ category: 'API', blocks: [
 'entry_console',
 'entry_console_clear',
 'change_var', 'entry_console_writing', 'finish',
-'likeList', 'boost_mode', 'mouse','didScroll','scrollHandle','box','stop_button(click)_start','open_win','pc','PromptConfirm'
+'likeList', 'boost_mode', 'mouse','didScroll','scrollHandle','box','stop_button(click)_start','open_win','pc','PromptConfirm','user.username','change(X)'
 ]
 });
 
@@ -1239,4 +1291,4 @@ color: #ff;
 </style>
 `)
 
-$('#entryCategoryAPI').append('스폐셜'), alert("현재스페셜블럭은0.8.5입니다~(알림)");
+$('#entryCategoryAPI').append('스폐셜'), alert("현재스페셜블럭은0.9+입니다~(알림)");
