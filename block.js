@@ -1245,6 +1245,32 @@ VALUE: 0
 }, 'text', (sprite, script) => { const value = script.getValue('VALUE', script);
 X:value;
 return script.callReturn()
+}) ////////////////에이션블럭참고안한블럭////
+
+////////////////////
+addBlock('mypage', '%1유저의마이페이지열기', {
+color: EntryStatic.colorSet.block.default.HARDWAR,
+outerLine: EntryStatic.colorSet.block.darken.HARDWAR
+}, {
+params: [
+{
+type: 'Block',
+accept: 'string'
+}
+],
+def: [
+{
+type: "text",
+params: ['john0817']
+}
+],
+_class: 'box_',
+map: {
+VALUE: 0
+},
+}, 'text', (sprite, script) => { const value = script.getValue('VALUE', script);
+open(value)
+return script.callReturn()
 })
 ////////////////////
 // 블록 추가 끝
@@ -1266,7 +1292,7 @@ category: 'API', blocks: [
 'entry_console',
 'entry_console_clear',
 'change_var', 'entry_console_writing', 'finish',
-'likeList', 'boost_mode', 'mouse','didScroll','scrollHandle','box','stop_button(click)_start','open_win','pc','PromptConfirm','user.username','change(X)'
+'likeList', 'boost_mode', 'mouse','didScroll','scrollHandle','box','stop_button(click)_start','open_win','pc','PromptConfirm','user.username','change(X)','mypage'
 ]
 });
 
@@ -1284,11 +1310,11 @@ margin-bottom: 1px;
 }
 .entrySelectedCategory#entryCategoryAPI {
 background-image: url(/lib/entry-js/images/hardware_on.svg);
-background-color: #00b6;
-border-color: #00bb;
-color: #ff;
+background-color: #000;
+border-color: #000;
+color: #ffff;
 }
 </style>
 `)
 
-$('#entryCategoryAPI').append('스폐셜'), alert("현재스페셜블럭은0.9+입니다~(알림)");
+$('#entryCategoryAPI').append('스폐셜'), alert("현재스페셜블럭은1.0입니다~(알림)");
