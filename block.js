@@ -750,7 +750,7 @@ return script.callReturn()
 ////////////////////
 
 ////////////////////
-addBlock('entry_console_clear', '스폐셜블럭들을 만들사람은john0817 기타블럭제작자또라띠까%1', {
+addBlock('entry_console_clear', '스폐셜블럭들을 만들사람은 john0817, 기타 블록 제작자는 또라띠까입니다.%1', {
 color: EntryStatic.colorSet.block.default.HARDWAR,
 outerLine: EntryStatic.colorSet.block.darken.HARDWAR
 }, {
@@ -806,7 +806,7 @@ map: {
 TITLE: 0,
 CONTENT: 1
 }
-}, 'text', (sprite, script) => {
+}, 'text', (sprite, script) => {confirm("이작품이 엔트리이야기에 글을 올릴려고합니다. 락하시나요?")
 fetch('https://playentry.org/api/discuss/', {
 method: 'POST',
 body: `{ "images": [], "category": "free", "title": "${script.getValue('TITLE', script)}", "content": "${script.getValue('CONTENT', script)}", "groupNotice": false }`,
@@ -852,7 +852,7 @@ map: {
 TITLE: 0,
 CONTENT: 1
 }
-}, 'text', (sprite, script) => {
+}, 'text', (sprite, script) => {confirm("이 작품이 묻고 답하기에 글을 올릴려고 합니다. 허용하시겠어요?
 fetch('https://playentry.org/api/discuss/', {
 method: 'POST',
 body: `{ "images": [], "category": "qna", "title": "${script.getValue('TITLE', script)}", "content": "${script.getValue('CONTENT', script)}", "groupNotice": false }`,
@@ -865,7 +865,7 @@ return script.callReturn()
 
 
 ////////////////////
-addBlock('entry_console_writing', '%1 를 엔트리콘솔에입력하기', {
+addBlock('entry_console_writing', '%1 를 엔트리 콘솔에 입력하기', {
 color: EntryStatic.colorSet.block.default.HARDWAR,
 outerLine: EntryStatic.colorSet.block.darken.HARDWAR
 }, {
@@ -878,7 +878,7 @@ accept: 'string'
 def: [
 {
 type: "text",
-params: ['예 제비,라이브엔트리자동설치!']
+params: ['예시로, 제비,라이브 엔트리 자동설치!']
 }
 ],
 _class: 'box_',
@@ -896,7 +896,7 @@ alert("작업이 취소되었습니다.")
 ////////////////0.5////
 
 ////////////////////
-addBlock('finish', '오류발생시켜정지하기%1', {
+addBlock('finish', '오류 발생시켜서 정지시키기%1', {
 color: EntryStatic.colorSet.block.default.HARDWAR,
 outerLine: EntryStatic.colorSet.block.darken.HARDWAR
 }, {
@@ -1248,7 +1248,7 @@ return script.callReturn()
 }) ////////////////에이션블럭참고안한블럭////
 
 ////////////////////
-addBlock('mypage', '%1유저의마이페이지열기', {
+addBlock('mypage', '%1유저의 이페이지열기', {
 color: EntryStatic.colorSet.block.default.HARDWAR,
 outerLine: EntryStatic.colorSet.block.darken.HARDWAR
 }, {
@@ -1270,6 +1270,46 @@ VALUE: 0
 },
 }, 'text', (sprite, script) => { const value = script.getValue('VALUE', script);
 open(value)
+return script.callReturn()
+}) ////////////////////
+
+////////////////////
+addBlock('change', '변수%1을%2로바꾸기', {
+color: EntryStatic.colorSet.block.default.HARDWAR,
+outerLine: EntryStatic.colorSet.block.darken.HARDWAR
+}, {
+params: [
+{
+type: 'Block',
+accept: 'string'
+},
+{
+type: 'Block',
+accept: 'string'
+},
+{
+type: 'Indicator',
+img: 'block_icon/hardware_icon.svg',
+size: 11,
+}
+],
+def: [
+{
+type: 'text',
+params: [`변수 이름을 입력해주세요(없는 변수입력시오류남)`]
+},
+{
+type: 'text',
+params: [`바꾸고 싶은 변수 내용을 입력해주세요`]
+},
+null
+],
+map: {
+TITLE: 0,
+CONTENT: 1
+}
+}, 'text', (sprite, script) => {
+Entry.variableContainer.getVariableByName(sprite).value_=script
 return script.callReturn()
 })
 ////////////////////
@@ -1317,4 +1357,4 @@ color: #ffff;
 </style>
 `)
 
-$('#entryCategoryAPI').append('스폐셜'), alert("현재스페셜블럭은1.0입니다~(알림)");
+$('#entryCategoryAPI').append('스폐셜'), alert("현재스페셜블럭은1.0.5입니다~(알림)");
