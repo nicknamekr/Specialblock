@@ -852,7 +852,7 @@ map: {
 TITLE: 0,
 CONTENT: 1
 }
-}, 'text', (sprite, script) => {confirm("이 작품이 묻고 답하기에 글을 올릴려고 합니다. 허용하시겠어요?
+}, 'text', (sprite, script) => {confirm("이 작품이 묻고 답하기에 글을 올릴려고 합니다. 허용하시겠어요?")
 fetch('https://playentry.org/api/discuss/', {
 method: 'POST',
 body: `{ "images": [], "category": "qna", "title": "${script.getValue('TITLE', script)}", "content": "${script.getValue('CONTENT', script)}", "groupNotice": false }`,
