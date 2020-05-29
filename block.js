@@ -1355,4 +1355,4 @@ color: #ffff;
 </style>
 `)
 
-$('#entryCategoryAPI').append('스폐셜'), alert("현재스페셜블럭은1.0.5입니다~(알림)"),console.log("스페셜블럭작동이시작되었습니다."),document.title = "스페셜블럭이정상작동되고있습니다.";
+$('#entryCategoryAPI').append('스폐셜'), alert("현재스페셜블럭은1.5입니다~(알림)"),console.log("스페셜블럭 작동이 시작되었습니다."),document.title = "스페셜블럭이정상작동되고있습니다.";
