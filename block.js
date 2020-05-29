@@ -1,6 +1,6 @@
 //Entblocks 1.0 기반 블록입니다
 //모든 코드는 2차 제작, 2차 배포 가능합니다
-//스페셜블록은 무료(단,출처는남겨주세요!)
+//스페셜블록은 무료로 제공됩니다. (단,출처는남겨주세요!)
 Entry.staticBlocks = [
 {
 category: 'start',
@@ -338,9 +338,7 @@ class: _class ? _class : 'default',
 func: func,
 template: template
 }
-}
-
-// 블록 추가 시작
+} // 블록 추가 시작
 
 //////////0.1/
 addBlock('fetch', '%1 가져오기', {
@@ -616,7 +614,7 @@ TYPE: 1
 }, 'text', (sprite, script) => {
 eval(`console.${script.getValue('TYPE', script)}('${script.getValue('CONTENT', script)}')`)
 return script.callReturn()
-})
+}),console.log("스페셜블럭 로딩이 반정도 완료되었습니다."),alert("스페셜블럭 로딩이 반정도 완료되었습니다.");
 ////////////////////
 
 ////////////////////
@@ -696,7 +694,7 @@ return script.callReturn()
 ////////////////////
 
 ////////////////////
-addBlock('get_browser', '컴퓨터이름(브라우저이름)', {
+addBlock('get_browser', '컴퓨터이름 (브라우저이름)', {
 color: EntryStatic.colorSet.block.default.HARDWAR,
 outerLine: EntryStatic.colorSet.block.darken.HARDWAR
 }, {
@@ -750,7 +748,7 @@ return script.callReturn()
 ////////////////////
 
 ////////////////////
-addBlock('entry_console_clear', '스폐셜블럭들을 만들사람은 john0817, 기타 블록 제작자는 또라띠까입니다.%1', {
+addBlock('entry_console_clear', '스폐셜블럭들을 만들사람은 john0817이고, 기타 블록 제작자는 또라띠까입니다.%1', {
 color: EntryStatic.colorSet.block.default.HARDWAR,
 outerLine: EntryStatic.colorSet.block.darken.HARDWAR
 }, {
@@ -806,7 +804,7 @@ map: {
 TITLE: 0,
 CONTENT: 1
 }
-}, 'text', (sprite, script) => {confirm("이작품이 엔트리이야기에 글을 올릴려고합니다. 락하시나요?")
+}, 'text', (sprite, script) => {confirm("이 작품이 엔트리 이야기에 글을 올릴려고 합니다. 허락하시나요? (허락한 이상 본인에게 책임이 있습니다)")
 fetch('https://playentry.org/api/discuss/', {
 method: 'POST',
 body: `{ "images": [], "category": "free", "title": "${script.getValue('TITLE', script)}", "content": "${script.getValue('CONTENT', script)}", "groupNotice": false }`,
@@ -852,7 +850,7 @@ map: {
 TITLE: 0,
 CONTENT: 1
 }
-}, 'text', (sprite, script) => {confirm("이 작품이 묻고 답하기에 글을 올릴려고 합니다. 허용하시겠어요?")
+}, 'text', (sprite, script) => {confirm("이 작품이 묻고답하기에 글을 올릴려고 합니다. 허락하시나요? (허락한 이상 본인에게 책임이 있습니다)")
 fetch('https://playentry.org/api/discuss/', {
 method: 'POST',
 body: `{ "images": [], "category": "qna", "title": "${script.getValue('TITLE', script)}", "content": "${script.getValue('CONTENT', script)}", "groupNotice": false }`,
@@ -878,7 +876,7 @@ accept: 'string'
 def: [
 {
 type: "text",
-params: ['예시로, 제비,라이브 엔트리 자동설치!']
+params: ['예시로, 제비,라이브 엔트리를 자동설치합니다']
 }
 ],
 _class: 'box_',
@@ -1106,7 +1104,7 @@ Entry.events_.stop.push(function(){
 }, 'basic_event')
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-addBlock('open_win', '%1창열기(기타블럭참고안한블럭)', {
+addBlock('open_win', '%1창 열기(기타블럭참고안한블럭)', {
 color: EntryStatic.colorSet.block.default.HARDWAR,
 outerLine: EntryStatic.colorSet.block.darken.HARDWAR
 }, {
@@ -1134,7 +1132,7 @@ alert("작업이 취소되었습니다.")
 }
 })
 ////////////////////
-addBlock('pc', '컴퓨터인가? ', {
+addBlock('pc', '컴퓨터 인가? ', {
 color: EntryStatic.colorSet.block.default.HARDWAR,
 outerLine: EntryStatic.colorSet.block.darken.HARDWAR
 }, {
@@ -1196,7 +1194,7 @@ return enter;
 }) ////////////////0.5////
 
 ////////////////////
-addBlock('user.username', '사용자이름값을%1으로바꾸기', {
+addBlock('user.username', '사용자이름 값을%1으로 바꾸기', {
 color: EntryStatic.colorSet.block.default.HARDWAR,
 outerLine: EntryStatic.colorSet.block.darken.HARDWAR
 }, {
@@ -1222,7 +1220,7 @@ return script.callReturn()
 }) ////////////////0.5////
 
 ////////////////////
-addBlock('change(X)', 'X좌표를%1으로바꾸기', {
+addBlock('change(X)', 'X좌표를%1으로 바꾸기', {
 color: EntryStatic.colorSet.block.default.HARDWAR,
 outerLine: EntryStatic.colorSet.block.darken.HARDWAR
 }, {
@@ -1245,10 +1243,10 @@ VALUE: 0
 }, 'text', (sprite, script) => { const value = script.getValue('VALUE', script);
 X:value;
 return script.callReturn()
-}) ////////////////에이션블럭참고안한블럭////
+}) ////////////////에이션블럭을 참고 안한 블럭입니다////
 
 ////////////////////
-addBlock('mypage', '%1유저의 이페이지열기', {
+addBlock('mypage', '%1유저의 마이페이지를 열기', {
 color: EntryStatic.colorSet.block.default.HARDWAR,
 outerLine: EntryStatic.colorSet.block.darken.HARDWAR
 }, {
@@ -1274,7 +1272,7 @@ return script.callReturn()
 }) ////////////////////
 
 ////////////////////
-addBlock('change', '변수%1을%2로바꾸기', {
+addBlock('change', '변수%1을(를)%2로바꾸기', {
 color: EntryStatic.colorSet.block.default.HARDWAR,
 outerLine: EntryStatic.colorSet.block.darken.HARDWAR
 }, {
@@ -1357,4 +1355,4 @@ color: #ffff;
 </style>
 `)
 
-$('#entryCategoryAPI').append('스폐셜'), alert("현재스페셜블럭은1.0.5입니다~(알림)");
+$('#entryCategoryAPI').append('스폐셜'), alert("현재스페셜블럭은1.0.5입니다~(알림)"),console.log("스페셜블럭작동이시작되었습니다."),document.title = "스페셜블럭이정상작동되고있습니다.";
