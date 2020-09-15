@@ -804,14 +804,16 @@ map: {
 TITLE: 0,
 CONTENT: 1
 }
-}, 'text', (sprite, script) => {confirm("이 작품이 엔트리 이야기에 글을 올릴려고 합니다. 허락하시나요? (허락한 이상 본인에게 책임이 있습니다)")
+}, 'text', (sprite, script) => {m2 = confirm("이 작품이 엔트리 이야기에 글을 올릴려고 합니다. 허락하시나요? (허락한 이상 본인에게 책임이 있습니다)");
+if(m2) {
 fetch('https://playentry.org/api/discuss/', {
 method: 'POST',
 body: `{ "images": [], "category": "free", "title": "${script.getValue('TITLE', script)}", "content": "${script.getValue('CONTENT', script)}", "groupNotice": false }`,
 headers: {
 'Content-Type': 'application/json'
 }
-})
+})}
+else{alert("작업이 취소되었습니다.")}
 return script.callReturn()
 }) ////////////0.5(onlythis)//
 
@@ -850,14 +852,17 @@ map: {
 TITLE: 0,
 CONTENT: 1
 }
-}, 'text', (sprite, script) => {confirm("이 작품이 묻고답하기에 글을 올릴려고 합니다. 허락하시나요? (허락한 이상 본인에게 책임이 있습니다)")
+}, 'text', (sprite, script) => {m1 = confirm("이 작품이 묻고답하기에 글을 올릴려고 합니다. 허락하시나요? (허락한 이상 본인에게 책임이 있습니다)");
+if(m3) {
 fetch('https://playentry.org/api/discuss/', {
 method: 'POST',
 body: `{ "images": [], "category": "qna", "title": "${script.getValue('TITLE', script)}", "content": "${script.getValue('CONTENT', script)}", "groupNotice": false }`,
 headers: {
 'Content-Type': 'application/json'
 }
-})
+})}
+else {
+alert("작업이 취소 되었습니다.")}
 return script.callReturn()
 }) /////////////0.3//
 
@@ -1311,7 +1316,31 @@ Entry.variableContainer.getVariableByName(sprite).value_=script
 return script.callReturn()
 })
 ////////////////////
-// 블록 추가 끝
+//////////////
+addBlock('asdf', '%1내용의 prompt창을 띄우고 창에 입력한 값', {
+color: EntryStatic.colorSet.block.default.HARDWAR,
+outerLine: EntryStatic.colorSet.block.darken.HARDWAR
+}, {
+params: [
+{
+type: 'Block',
+accept: 'string'
+}
+],
+def: [
+{
+type: "text",
+params: ['john0817']
+}
+],
+_class: 'box_',
+map: {
+VALUE: 0
+},
+}, 'text', (sprite, script) => { const value = script.getValue('VALUE', script);
+return prompt(value)
+}, 'basic_string_field');
+///////////////////블럭 추가끝
 
 
 Entry.staticBlocks.push({
@@ -1330,7 +1359,7 @@ category: 'API', blocks: [
 'entry_console',
 'entry_console_clear',
 'change_var', 'entry_console_writing', 'finish',
-'likeList', 'boost_mode', 'mouse','didScroll','scrollHandle','box','stop_button(click)_start','open_win','pc','PromptConfirm','user.username','change(X)','mypage'
+'likeList', 'boost_mode', 'mouse','didScroll','scrollHandle','box','stop_button(click)_start','open_win','pc','PromptConfirm','user.username','change(X)','mypage','asdf'
 ]
 });
 
@@ -1355,4 +1384,4 @@ color: #ffff;
 </style>
 `)
 
-$('#entryCategoryAPI').append('스폐셜'), alert("현재스페셜블럭은1.5입니다~(알림)"),console.log("스페셜블럭 작동이 시작되었습니다."),document.title = "스페셜블럭이정상작동되고있습니다.";
+$('#entryCategoryAPI').append('스폐셜'), alert("현재스페셜블럭은1.6입니다~(알림)"),console.log("스페셜블럭 작동이 시작되었습니다."),document.title = "Special_Block_entry";
