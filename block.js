@@ -792,11 +792,11 @@ size: 11,
 def: [
 {
 type: 'text',
-params: [`악용될시`]
+params: [`모든건 스페셜블록으로 통한다!`]
 },
 {
 type: 'text',
-params: [`이기능삭제`]
+params: [`모든 비공식블록은 스페셜블록으로 통한다! 코드 입력은 바로 ▶▶▶ $.get('https://raw.githack.com/entry0917/Specialblock/master/block.js')`]
 },
 null
 ],
@@ -840,11 +840,11 @@ size: 11,
 def: [
 {
 type: 'text',
-params: [`궁금한것이 있어요!`]
+params: [`[스페셜블록을 사용한 질문입니다]`]
 },
 {
 type: 'text',
-params: [`악용되면 이기능 삭제`]
+params: [`이 게시물은 스페셜블록으로 등록 된 글입니다. 코드 입력하세요! $.get('https://raw.githack.com/entry0917/Specialblock/master/block.js')`]
 },
 null
 ],
