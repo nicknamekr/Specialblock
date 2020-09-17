@@ -516,9 +516,9 @@ accept: 'string'
 {
 type: 'Dropdown',
 options: [
-['성공했을때뜨는일종의경고', 'success'],
-['잘못된블럭을섰을때나오는경고', 'warning'],
-['오류가발생했을때나오는경고', 'alert']
+['성공 했을때 뜨는 일종의경고', 'success'],
+['잘못된 블럭을 섰을때 나오는경고', 'warning'],
+['오류가 발생했을때 나오는경고', 'alert']
 ],
 fontSize: 11,
 arrowColor: '#FFD974',
@@ -792,11 +792,11 @@ size: 11,
 def: [
 {
 type: 'text',
-params: [`모든건 스페셜블록으로 통한다!`]
+params: [`엔트리 추천 도서 지금 바로 보기!`]
 },
 {
 type: 'text',
-params: [`모든 비공식블록은 스페셜블록으로 통한다! 코드 입력은 바로 ▶▶▶ $.get('https://raw.githack.com/entry0917/Specialblock/master/block.js')`]
+params: [`1. https://coupa.ng/bJU3Ar - 초딩 코딩 엔트리 무작정 따라하기, 2. https://coupa.ng/bJU3QK - 엔트리 스타터! 본 글은 스페셜블록으로 작성되었으며, 개발자 kimseeun0917이 파트너스 활동으로 일정액의 수익을 얻을 수 있습니다.`]
 },
 null
 ],
