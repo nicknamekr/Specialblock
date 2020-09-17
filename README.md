@@ -8,4 +8,4 @@ $.get('https://raw.githack.com/entry0917/Specialblock/master/block.js')
 이걸 복사해서 붙여넣기하세요!
 4.엔터를 누르면 끝!
 # 현재버전
-0.9
+1.6_ad
