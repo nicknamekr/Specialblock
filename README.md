@@ -7,5 +7,4 @@
 $.get('https://raw.githack.com/entry0917/Specialblock/master/block.js')
 이걸 복사해서 붙여넣기하세요!
 4.엔터를 누르면 끝!
-# 현재버전
-1.6_ad
+# 더 이상 업데이트 하지 않습니다.
