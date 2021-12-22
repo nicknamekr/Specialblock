@@ -1,10 +1,12 @@
 # Specialblock
-존님과 세은이 만든 최고의 블럭
-# 설치방법
-1.F12를 누른다
-2.가장위에서 console를 찾아서누른다
-3.아래에 하얀색바탕에 >이런게 파란색으로 되어있는곳에
-$.get('https://raw.githack.com/entry0917/Specialblock/master/block.js')
-이걸 복사해서 붙여넣기하세요!
-4.엔터를 누르면 끝!
-# 더 이상 업데이트 하지 않습니다.
+Second Custom Block in Entry (playentry.org)
+## Developers
+kimseeun0917 (Now : Nickname) / john0817 (Now : HM)
+# How to use?
+1.Press "F12".<br>
+2.Click "console".<br>
+3.$.get('https://raw.githack.com/entry0917/Specialblock/master/block.js')
+<br>Just copy and paste this in console and just press "enter".
+# Notice
+> No more updating or upgrading.
+We do **not** recommand to use. And we do **not** fix errors now.
