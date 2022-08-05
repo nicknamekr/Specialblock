@@ -1,12 +1,8 @@
 # Specialblock
-Second Custom Block in Entry (playentry.org)
-## Developers
-kimseeun0917 (Now : Nickname) / john0817 (Now : HM)
-# How to use?
-1.Press "F12".<br>
-2.Click "console".<br>
-3.$.get('https://raw.githack.com/entry0917/Specialblock/master/block.js')
-<br>Just copy and paste this in console and just press "enter".
-# Notice
-> No more updating or upgrading.
-We do **not** recommand to use. And we do **not** fix errors now.
+엔트리 두 번째 커스텀 블록.
+## 개발자 목록
+- Nickname
+# 사용 방법
+Console에 $.get('https://raw.githack.com/entry0917/Specialblock/master/block.js') 붙여넣기
+# 공지
+더 이상 업데이트 되지 않습니다.
